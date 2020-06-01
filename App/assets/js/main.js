@@ -25,7 +25,7 @@ $(document).ready(function() {
         let contractAddress = '0xa2445fd542A88ed425e6ef961AB1fEc5853F95c3';
 
         // create new contract instance
-        contractInstance = new web3.eth.Contract(abi, contractAddress);
+        contractInstance = new web3.eth.Contract(abi, contractAddress, {from: accounts[0]});
 
         bettorEthAddress = accounts[0];
 
@@ -44,38 +44,33 @@ $(document).ready(function() {
         $('#status-msg').html("");
     })
 
+    $('#flip').click(flipCoin);
+
 });
 
-function getBalances(houseWalletAddress, bettorAddress) {
+// Get's balances of the 'house' and 'bettor' (contract user) addresses
+//  Updates screen using jquery
+//  Also returns balances for using contracts
+async function getBalances(houseWalletAddress, bettorAddress) {
     let houseBalance = '';
     let bettorBalance = '';
 
     // get the house balance
-    web3.eth.getBalance(houseWalletAddress, (error, result) => {
+    await web3.eth.getBalance(houseWalletAddress, (error, result) => {
         if (!error) {
             houseBalance = parseFloat(web3.utils.fromWei(result, "ether"));
         }
         $('#display-house-balance').html(houseBalance + ' ETH');
     });
 
-    web3.eth.getBalance(bettorAddress, (error, result) => {
+    await web3.eth.getBalance(bettorAddress, (error, result) => {
         if (!error) {
             bettorBalance = parseFloat(web3.utils.fromWei(result), "ether");
             $('#display-bettor-balance').html(bettorBalance + ' ETH');
         }
     });
 
-    console.log(' in get bals');
-    console.log('hououse bal = ');
-    console.log(houseBalance);
-    console.log(' bett bal = ');
-    console.log(bettorBalance);
     return {houseBalance: houseBalance, bettorBalance: bettorBalance}
-
-}
-
-function getBettorAddress() {
-    return web3.eth.getAccounts()[0];
 }
 
 function flipCoin() {
@@ -96,10 +91,12 @@ function flipCoin() {
     console.log('bettor addr');
     console.log(bettorEthAddress);
 
+    // Get balances to re-verify
     preBetBalances =  getBalances('0xf463361c462Ac96F7124D41f7f27e13cE161DF90', bettorEthAddress);
     console.log('pre bet bal');
     console.log(preBetBalances);
     console.log('bet amount = ' + betAmount);
+    // verify balances
     if (betAmount > preBetBalances.houseBalance || betAmount > preBetBalances.bettorBalance) {
         $('#status-msg').html("You can't bet more than either your balance or the house balance");
         validated = false;
@@ -117,6 +114,8 @@ function flipCoin() {
         console.log('config = ');
         console.log(config);
     }
+
+    contractInstance.methods.placeWager(betOption, web3.utils.toWei(betAmount, "ether")).send();
 
     // Call contract methods
     // send() method transmits our transaction data to chain

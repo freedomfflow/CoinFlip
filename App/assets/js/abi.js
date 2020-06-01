@@ -15,8 +15,19 @@ var abi = [
         "type": "function"
     },
     {
-        "constant": true,
-        "inputs": [],
+        "constant": false,
+        "inputs": [
+            {
+                "internalType": "string",
+                "name": "betOption",
+                "type": "string"
+            },
+            {
+                "internalType": "uint256",
+                "name": "betAmount",
+                "type": "uint256"
+            }
+        ],
         "name": "placeWager",
         "outputs": [
             {
@@ -25,8 +36,8 @@ var abi = [
                 "type": "uint256"
             }
         ],
-        "payable": false,
-        "stateMutability": "view",
+        "payable": true,
+        "stateMutability": "payable",
         "type": "function"
     },
     {

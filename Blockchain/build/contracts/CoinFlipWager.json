@@ -17,8 +17,19 @@
       "type": "function"
     },
     {
-      "constant": true,
-      "inputs": [],
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "betOption",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "betAmount",
+          "type": "uint256"
+        }
+      ],
       "name": "placeWager",
       "outputs": [
         {
@@ -27,8 +38,8 @@
           "type": "uint256"
         }
       ],
-      "payable": false,
-      "stateMutability": "view",
+      "payable": true,
+      "stateMutability": "payable",
       "type": "function"
     },
     {
@@ -47,21 +58,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"flip\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"placeWager\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol\":\"CoinFlipWager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol\":{\"keccak256\":\"0xf17f71810163536058a5b6c9b44799f0a75e614d17dd4c090692dae52d8be7c2\",\"urls\":[\"bzz-raw://4109d42596c158ea529e2f454a2c78f20be229e9c81d94393ec1acc96618c323\",\"dweb:/ipfs/QmQuYgttFgmvUkNx7kTvJvj4aW3N57BEMMxzdEMXttmAWJ\"]},\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/Ownable.sol\":{\"keccak256\":\"0x54e281a9961e1446500b6e6afef99c846a0633ac4e5e9671c154410cf1e5849e\",\"urls\":[\"bzz-raw://23e1ad63dac9c62dfd88d98a8b265d43fe48f88b7e92fd1f70465b70b8913c2a\",\"dweb:/ipfs/Qmcqo8118tT8r9Gm2Xs8PrqbUmXRKrQRcBh7uJPXejy4ej\"]}},\"version\":1}",
-  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610141806100536000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80638da5cb5b14610046578063b1cc434814610090578063cde4efa9146100ae575b600080fd5b61004e6100cc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100986100f1565b6040518082815260200191505060405180910390f35b6100b66100fa565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60006001905090565b60006002428161010657fe5b0690509056fea265627a7a723158206bde549ef0fd131468f75c28661f9e6835517cbd0a23ab73bf35c2cc8b6ac0d964736f6c634300050c0032",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80638da5cb5b14610046578063b1cc434814610090578063cde4efa9146100ae575b600080fd5b61004e6100cc565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100986100f1565b6040518082815260200191505060405180910390f35b6100b66100fa565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b60006001905090565b60006002428161010657fe5b0690509056fea265627a7a723158206bde549ef0fd131468f75c28661f9e6835517cbd0a23ab73bf35c2cc8b6ac0d964736f6c634300050c0032",
-  "sourceMap": "49:195:0:-;;;215:10:2;207:5;;:18;;;;;;;;;;;;;;;;;;49:195:0;;;;;;",
-  "deployedSourceMap": "49:195:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;49:195:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:20:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;89:73:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;168:74;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:20:2;;;;;;;;;;;;;:::o;89:73:0:-;131:4;154:1;147:8;;89:73;:::o;168:74::-;205:4;234:1;228:3;:7;;;;;;221:14;;168:74;:::o",
-  "source": "import \"./Ownable.sol\";\npragma solidity 0.5.12;\n\ncontract CoinFlipWager is Ownable{\n\n    function placeWager() public view returns(uint) {\n        return 1;\n    }\n\n    function flip() public view returns (uint) {\n        return now % 2;\n    }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"flip\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"string\",\"name\":\"betOption\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"betAmount\",\"type\":\"uint256\"}],\"name\":\"placeWager\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol\":\"CoinFlipWager\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol\":{\"keccak256\":\"0xa03ec7b6ac62c427eee236c727f6d9a1ebe252ddd0851d96fb72fcf6e8ba2937\",\"urls\":[\"bzz-raw://11295971c50060e858fc02e0f1cdf27988fde121da0e8b7ee2c6d9febd63b3d3\",\"dweb:/ipfs/Qmcf5tQE1CAQNwo4EE8U7YgYKUgGdEarJ4TR1kL4rMgePh\"]},\"/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/Ownable.sol\":{\"keccak256\":\"0x54e281a9961e1446500b6e6afef99c846a0633ac4e5e9671c154410cf1e5849e\",\"urls\":[\"bzz-raw://23e1ad63dac9c62dfd88d98a8b265d43fe48f88b7e92fd1f70465b70b8913c2a\",\"dweb:/ipfs/Qmcqo8118tT8r9Gm2Xs8PrqbUmXRKrQRcBh7uJPXejy4ej\"]}},\"version\":1}",
+  "bytecode": "0x6080604052336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550610217806100536000396000f3fe6080604052600436106100345760003560e01c80638da5cb5b14610039578063c74e3af014610090578063cde4efa914610169575b600080fd5b34801561004557600080fd5b5061004e610194565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610153600480360360408110156100a657600080fd5b81019080803590602001906401000000008111156100c357600080fd5b8201836020820111156100d557600080fd5b803590602001918460018302840111640100000000831117156100f757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506101b9565b6040518082815260200191505060405180910390f35b34801561017557600080fd5b5061017e6101d0565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806101c46101d0565b90508091505092915050565b6000600242816101dc57fe5b0690509056fea265627a7a7231582023c007dbaa048a431dc24ec0c3082da8e2dff13609276e3b906ef8cc6c30dad964736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600436106100345760003560e01c80638da5cb5b14610039578063c74e3af014610090578063cde4efa914610169575b600080fd5b34801561004557600080fd5b5061004e610194565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610153600480360360408110156100a657600080fd5b81019080803590602001906401000000008111156100c357600080fd5b8201836020820111156100d557600080fd5b803590602001918460018302840111640100000000831117156100f757600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803590602001909291905050506101b9565b6040518082815260200191505060405180910390f35b34801561017557600080fd5b5061017e6101d0565b6040518082815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000806101c46101d0565b90508091505092915050565b6000600242816101dc57fe5b0690509056fea265627a7a7231582023c007dbaa048a431dc24ec0c3082da8e2dff13609276e3b906ef8cc6c30dad964736f6c634300050c0032",
+  "sourceMap": "49:359:0:-;;;215:10:2;207:5;;:18;;;;;;;;;;;;;;;;;;49:359:0;;;;;;",
+  "deployedSourceMap": "49:359:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;47:20:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;47:20:2;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;89:184:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;89:184:0;;;;;;;;;;21:11:-1;8;5:28;2:2;;;46:1;43;36:12;2:2;89:184:0;;35:9:-1;28:4;12:14;8:25;5:40;2:2;;;58:1;55;48:12;2:2;89:184:0;;;;;;100:9:-1;95:1;81:12;77:20;67:8;63:35;60:50;39:11;25:12;22:29;11:107;8:2;;;131:1;128;121:12;8:2;89:184:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;30:3:-1;22:6;14;1:33;99:1;93:3;85:6;81:16;74:27;137:4;133:9;126:4;121:3;117:14;113:30;106:37;;169:3;161:6;157:16;147:26;;89:184:0;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;332:74;;8:9:-1;5:2;;;30:1;27;20:12;5:2;332:74:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;47:20:2;;;;;;;;;;;;;:::o;89:184:0:-;173:4;214:15;232:6;:4;:6::i;:::-;214:24;;256:10;249:17;;;89:184;;;;:::o;332:74::-;369:4;398:1;392:3;:7;;;;;;385:14;;332:74;:::o",
+  "source": "import \"./Ownable.sol\";\npragma solidity 0.5.12;\n\ncontract CoinFlipWager is Ownable{\n\n    function placeWager(string memory betOption, uint betAmount) public payable returns(uint) {\n        // Flip the coin\n        uint flipResult = flip();\n\n        return flipResult;\n    }\n\n    // Coin flip\n    //  0 - heads\n    //  1 - tails\n    function flip() public view returns (uint) {\n        return now % 2;\n    }\n}\n",
   "sourcePath": "/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol",
   "ast": {
     "absolutePath": "/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol",
     "exportedSymbols": {
       "CoinFlipWager": [
-        23
+        32
       ]
     },
-    "id": 24,
+    "id": 33,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -69,8 +80,8 @@
         "file": "./Ownable.sol",
         "id": 1,
         "nodeType": "ImportDirective",
-        "scope": 24,
-        "sourceUnit": 86,
+        "scope": 33,
+        "sourceUnit": 95,
         "src": "0:23:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -94,10 +105,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 85,
+              "referencedDeclaration": 94,
               "src": "75:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$85",
+                "typeIdentifier": "t_contract$_Ownable_$94",
                 "typeString": "contract Ownable"
               }
             },
@@ -107,75 +118,156 @@
           }
         ],
         "contractDependencies": [
-          85
+          94
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 23,
+        "id": 32,
         "linearizedBaseContracts": [
-          23,
-          85
+          32,
+          94
         ],
         "name": "CoinFlipWager",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 11,
+              "id": 20,
               "nodeType": "Block",
-              "src": "137:25:0",
+              "src": "179:94:0",
               "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "flipResult",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 20,
+                      "src": "214:15:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "214:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 17,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 15,
+                      "name": "flip",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 31,
+                      "src": "232:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 16,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "232:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "214:24:0"
+                },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "hexValue": "31",
-                    "id": 9,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "number",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "154:1:0",
-                    "subdenomination": null,
+                    "id": 18,
+                    "name": "flipResult",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14,
+                    "src": "256:10:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_rational_1_by_1",
-                      "typeString": "int_const 1"
-                    },
-                    "value": "1"
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  "functionReturnParameters": 8,
-                  "id": 10,
+                  "functionReturnParameters": 12,
+                  "id": 19,
                   "nodeType": "Return",
-                  "src": "147:8:0"
+                  "src": "249:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 12,
+            "id": 21,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "placeWager",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 5,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "108:2:0"
-            },
-            "returnParameters": {
-              "id": 8,
+              "id": 9,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7,
-                  "name": "",
+                  "id": 6,
+                  "name": "betOption",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "131:4:0",
+                  "scope": 21,
+                  "src": "109:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "109:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8,
+                  "name": "betAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "134:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -183,10 +275,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6,
+                    "id": 7,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "131:4:0",
+                    "src": "134:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -196,19 +288,52 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "130:6:0"
+              "src": "108:41:0"
             },
-            "scope": 23,
-            "src": "89:73:0",
-            "stateMutability": "view",
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "173:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "173:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "172:6:0"
+            },
+            "scope": 32,
+            "src": "89:184:0",
+            "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 21,
+              "id": 30,
               "nodeType": "Block",
-              "src": "211:31:0",
+              "src": "375:31:0",
               "statements": [
                 {
                   "expression": {
@@ -217,19 +342,19 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 19,
+                    "id": 28,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 17,
+                      "id": 26,
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 102,
-                      "src": "228:3:0",
+                      "referencedDeclaration": 111,
+                      "src": "392:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -240,14 +365,14 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "32",
-                      "id": 18,
+                      "id": 27,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "234:1:0",
+                      "src": "398:1:0",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
@@ -255,43 +380,43 @@
                       },
                       "value": "2"
                     },
-                    "src": "228:7:0",
+                    "src": "392:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 16,
-                  "id": 20,
+                  "functionReturnParameters": 25,
+                  "id": 29,
                   "nodeType": "Return",
-                  "src": "221:14:0"
+                  "src": "385:14:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 22,
+            "id": 31,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "flip",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 13,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "181:2:0"
+              "src": "345:2:0"
             },
             "returnParameters": {
-              "id": 16,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15,
+                  "id": 24,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22,
-                  "src": "205:4:0",
+                  "scope": 31,
+                  "src": "369:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -299,10 +424,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14,
+                    "id": 23,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "205:4:0",
+                    "src": "369:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -312,29 +437,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "204:6:0"
+              "src": "368:6:0"
             },
-            "scope": 23,
-            "src": "168:74:0",
+            "scope": 32,
+            "src": "332:74:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 24,
-        "src": "49:195:0"
+        "scope": 33,
+        "src": "49:359:0"
       }
     ],
-    "src": "0:245:0"
+    "src": "0:409:0"
   },
   "legacyAST": {
     "absolutePath": "/home/wolff/EthereumProjects/Ivan-Solidity-201/CoinFlip/Blockchain/contracts/CoinFlipWager.sol",
     "exportedSymbols": {
       "CoinFlipWager": [
-        23
+        32
       ]
     },
-    "id": 24,
+    "id": 33,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -342,8 +467,8 @@
         "file": "./Ownable.sol",
         "id": 1,
         "nodeType": "ImportDirective",
-        "scope": 24,
-        "sourceUnit": 86,
+        "scope": 33,
+        "sourceUnit": 95,
         "src": "0:23:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -367,10 +492,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 85,
+              "referencedDeclaration": 94,
               "src": "75:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$85",
+                "typeIdentifier": "t_contract$_Ownable_$94",
                 "typeString": "contract Ownable"
               }
             },
@@ -380,75 +505,156 @@
           }
         ],
         "contractDependencies": [
-          85
+          94
         ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 23,
+        "id": 32,
         "linearizedBaseContracts": [
-          23,
-          85
+          32,
+          94
         ],
         "name": "CoinFlipWager",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": {
-              "id": 11,
+              "id": 20,
               "nodeType": "Block",
-              "src": "137:25:0",
+              "src": "179:94:0",
               "statements": [
+                {
+                  "assignments": [
+                    14
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 14,
+                      "name": "flipResult",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 20,
+                      "src": "214:15:0",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 13,
+                        "name": "uint",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "214:4:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 17,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "id": 15,
+                      "name": "flip",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 31,
+                      "src": "232:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_view$__$returns$_t_uint256_$",
+                        "typeString": "function () view returns (uint256)"
+                      }
+                    },
+                    "id": 16,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "232:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "214:24:0"
+                },
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "hexValue": "31",
-                    "id": 9,
-                    "isConstant": false,
-                    "isLValue": false,
-                    "isPure": true,
-                    "kind": "number",
-                    "lValueRequested": false,
-                    "nodeType": "Literal",
-                    "src": "154:1:0",
-                    "subdenomination": null,
+                    "id": 18,
+                    "name": "flipResult",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14,
+                    "src": "256:10:0",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_rational_1_by_1",
-                      "typeString": "int_const 1"
-                    },
-                    "value": "1"
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
                   },
-                  "functionReturnParameters": 8,
-                  "id": 10,
+                  "functionReturnParameters": 12,
+                  "id": 19,
                   "nodeType": "Return",
-                  "src": "147:8:0"
+                  "src": "249:17:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 12,
+            "id": 21,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "placeWager",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 5,
-              "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "108:2:0"
-            },
-            "returnParameters": {
-              "id": 8,
+              "id": 9,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 7,
-                  "name": "",
+                  "id": 6,
+                  "name": "betOption",
                   "nodeType": "VariableDeclaration",
-                  "scope": 12,
-                  "src": "131:4:0",
+                  "scope": 21,
+                  "src": "109:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 5,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "109:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 8,
+                  "name": "betAmount",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "134:14:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -456,10 +662,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6,
+                    "id": 7,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "131:4:0",
+                    "src": "134:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -469,19 +675,52 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "130:6:0"
+              "src": "108:41:0"
             },
-            "scope": 23,
-            "src": "89:73:0",
-            "stateMutability": "view",
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 11,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 21,
+                  "src": "173:4:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 10,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "173:4:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "172:6:0"
+            },
+            "scope": 32,
+            "src": "89:184:0",
+            "stateMutability": "payable",
             "superFunction": null,
             "visibility": "public"
           },
           {
             "body": {
-              "id": 21,
+              "id": 30,
               "nodeType": "Block",
-              "src": "211:31:0",
+              "src": "375:31:0",
               "statements": [
                 {
                   "expression": {
@@ -490,19 +729,19 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 19,
+                    "id": 28,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
                       "argumentTypes": null,
-                      "id": 17,
+                      "id": 26,
                       "name": "now",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 102,
-                      "src": "228:3:0",
+                      "referencedDeclaration": 111,
+                      "src": "392:3:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -513,14 +752,14 @@
                     "rightExpression": {
                       "argumentTypes": null,
                       "hexValue": "32",
-                      "id": 18,
+                      "id": 27,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
-                      "src": "234:1:0",
+                      "src": "398:1:0",
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_2_by_1",
@@ -528,43 +767,43 @@
                       },
                       "value": "2"
                     },
-                    "src": "228:7:0",
+                    "src": "392:7:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 16,
-                  "id": 20,
+                  "functionReturnParameters": 25,
+                  "id": 29,
                   "nodeType": "Return",
-                  "src": "221:14:0"
+                  "src": "385:14:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 22,
+            "id": 31,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "flip",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 13,
+              "id": 22,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "181:2:0"
+              "src": "345:2:0"
             },
             "returnParameters": {
-              "id": 16,
+              "id": 25,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 15,
+                  "id": 24,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 22,
-                  "src": "205:4:0",
+                  "scope": 31,
+                  "src": "369:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -572,10 +811,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 14,
+                    "id": 23,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "205:4:0",
+                    "src": "369:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -585,20 +824,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "204:6:0"
+              "src": "368:6:0"
             },
-            "scope": 23,
-            "src": "168:74:0",
+            "scope": 32,
+            "src": "332:74:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 24,
-        "src": "49:195:0"
+        "scope": 33,
+        "src": "49:359:0"
       }
     ],
-    "src": "0:245:0"
+    "src": "0:409:0"
   },
   "compiler": {
     "name": "solc",
@@ -608,12 +847,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1A3947BD510417c2012583e65319446892e77C7f",
-      "transactionHash": "0x0e0293229070c974cf0f55e4583e785773ab900e5e8e51873bbc7ffdc2487ba4"
+      "address": "0x875266AeDAf517E866d2F2F1a6D0f54e3E1b00ba",
+      "transactionHash": "0x35ac04cb0d8626b82551f44a6939e1b6a2fca2e97e79273b0fc0d340bdcfc542"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2020-06-01T00:18:28.089Z",
+  "updatedAt": "2020-06-01T23:22:02.348Z",
   "devdoc": {
     "methods": {}
   },
