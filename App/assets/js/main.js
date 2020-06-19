@@ -4,7 +4,7 @@ var web3 = new Web3(Web3.givenProvider);
 var contractInstance;
 var bettorEthAddress;
 
-// Create a contract instance in Javascript so we can interact with it - replicates contract instance in blockchaing
+// Create a contract instance in Javascript so we can interact with it - replicates contract instance in blockchain
 //  by wrapping in some javascript magic so we can then call functions in contract
 // Web3 has helper functions for this
 
@@ -14,10 +14,10 @@ $(document).ready(function() {
     // 'Accounts' is an array of address supplied by MetaMask - will be the main address used by MetaMask
 
     // 'abi' is available after contract is deployed in truffle
-    //  go into project, build folder, and look for json file (People.json) and within this config, near top, you will
+    //  go into project, build folder, and look for json file and within this config, near top, you will
     //   see 'abi' array -- copy the whole thing!!
     //    - create new file in dapp folder called 'abi.js' and assign to var there
-    //  for 'address', redeploy People (migrate --reset from truffle console), and in the output of that,
+    //  for 'address', redeploy (migrate --reset from truffle console), and in the output of that,
     //    copy 'contract address:'
     //  'accounts[0]' is the address of whomever is using the contract
     window.ethereum.enable().then((accounts) => {
@@ -139,15 +139,15 @@ function flipCoin() {
     //     });
 }
 
-function fetch() {
-    // Since a getter, we aren't waiting for confirmation (i.e. txn getting mined and waiting for reply)
-    contractInstance.methods.getPerson().call().then((result) => {
-        console.log('Result = ');
-        console.log(result);
-
-        // Set data on screen
-        $("#name_output").text(result.name);
-        $("#age_output").text(result.age);
-        $("#height_output").text(result.height);
-    })
-}
+// function fetch() {
+//     // Since a getter, we aren't waiting for confirmation (i.e. txn getting mined and waiting for reply)
+//     contractInstance.methods.getPerson().call().then((result) => {
+//         console.log('Result = ');
+//         console.log(result);
+//
+//         // Set data on screen
+//         $("#name_output").text(result.name);
+//         $("#age_output").text(result.age);
+//         $("#height_output").text(result.height);
+//     })
+// }
